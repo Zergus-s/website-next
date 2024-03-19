@@ -9,7 +9,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Gaidashevskyi Anton - Portfolio",
+  title: "Gaidashevskyi Anton - self presentation",
   description: "",
 };
 
