@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.page-wrapper {
+    @apply overflow-x-hidden overflow-y-auto pt-24 flex flex-col pb-10 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 relative h-screen
+}
+
+
+@layer base {
+    :root {
+        --col-text: 227 185 255;
+    }
+}
