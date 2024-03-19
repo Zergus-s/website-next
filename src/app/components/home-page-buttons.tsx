@@ -5,8 +5,8 @@ import Link from "next/link";
 
 function HomePageButtons() {
   return (
-    <div className="flex gap-6">
-      <Link href="/projects">
+    <div className="flex gap-6 w-full justify-center">
+      <Link prefetch={false} href="/projects">
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -15,7 +15,7 @@ function HomePageButtons() {
           View my work
         </motion.button>
       </Link>
-      <Link href="/contact">
+      <Link prefetch={false} href="/contact">
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}

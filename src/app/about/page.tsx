@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { experience, summaryText } from "./const";
-import Brain from "@/components/brain";
+import Brain from "@/app/components/brain";
 import { useInView, useScroll, motion } from "framer-motion";
 
 import ExperienceItem from "./components/experience-item";
@@ -15,13 +15,13 @@ const Title = ({ title }: { title: string }) => (
 
 const SectionContainer = ({ children }: { children: React.ReactNode }) => {
   const ref = useRef(null);
-  const isRefInWiev = useInView(ref, { margin: "-100px" });
+  const isRefInView = useInView(ref, { once: true });
 
   return (
     <motion.section
       ref={ref as React.RefObject<HTMLDivElement> | null}
       initial={{ x: -300 }}
-      animate={isRefInWiev ? { x: 0 } : { x: -300 }}
+      animate={isRefInView ? { x: 0 } : { x: -300 }}
       className="flex flex-col justify-center"
     >
       <div className="text-md md:text-xl lg:text-2xl text-white/50">
@@ -43,13 +43,15 @@ function AboutPage() {
           {/* SUMMARY */}
           <SectionContainer>
             <Title title="Summary" />
-            <p className="text-md md:text-xl lg:text-2xl text-white/50">
+            <p className="text-md md:text-xl mt-5 lg:text-2xl text-white/50">
               {summaryText}
             </p>
           </SectionContainer>
           <SectionContainer>
             <Title title="Skills" />
-            <SkillsList />
+            <div className="mt-5">
+              <SkillsList />
+            </div>
           </SectionContainer>
           <div className="flex flex-col gap-6 mt-4 w-full">
             <Title title="Experience" />

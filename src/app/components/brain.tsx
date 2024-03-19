@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { MotionValue, motion, useTransform } from "framer-motion";
 
 const Brain = ({

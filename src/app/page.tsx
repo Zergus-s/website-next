@@ -1,29 +1,36 @@
 "use client";
 
-import HomePageButtons from "@/components/home-page-buttons";
+import HomePageButtons from "@/app/components/home-page-buttons";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Loading from "./loading";
+import { useState } from "react";
 
 function Homepage() {
+  const [loading, setLoading] = useState(true);
+
   return (
     <motion.div
-      className="page-wrapper"
+      className="page-wrapper overflow-y-auto"
       initial={{ y: "-200vh" }}
       animate={{ y: "0%" }}
       transition={{ duration: 0.7 }}
     >
-      <div className="flex flex-1 flex-col lg:flex-row h-full w-full">
+      <div className="flex flex-1 flex-col lg:flex-row h-full w-full ">
         {/* IMAGE CONTAINER */}
-        <div className="h-1/2 min-h-200  lg:h-full lg:w-1/2  relative">
+        <div className="h-1/2 min-h-[320px] md:h-full lg:w-1/2 relative  lg:mr-10 mb-4 lg:mb-0">
           <Image
             src="/home-image.png"
             alt=""
-            className="object-contain "
+            className="object-contain"
             fill
+            loading="eager"
+            onLoadingComplete={() => setLoading(false)}
           />
+          {loading && <Loading />}
         </div>
         {/* TEXT CONTAINER */}
-        <div className="h-1/2 flex flex-col gap-8 items-center justify-center lg:h-full lg:w-1/2 ml-10 ">
+        <div className="h-full flex flex-col gap-8 items-center justify-start lg:justify-center lg:h-full lg:w-1/2">
           {/* TITLE */}
           <h1 className="text-4xl md:text-6xl font-bold text-white/80">
             Crafting Digital Experience, Designing Tomorrow
@@ -35,7 +42,6 @@ function Homepage() {
             portfolio showcases a diverse collection of projects that reflect my
             commitment to excellence
           </p>
-          {/* BUTTONS */}
           <HomePageButtons />
         </div>
       </div>

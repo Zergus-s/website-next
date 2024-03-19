@@ -5,7 +5,7 @@
 
 
 .page-wrapper {
-    @apply overflow-x-hidden overflow-y-auto pt-24 flex flex-col pb-10 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 relative h-screen
+    @apply overflow-x-hidden overflow-y-auto pt-24 pb-10 flex flex-col px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 relative h-screen
 }
 
 
