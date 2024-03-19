@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} h-dvh w-dvh bg-gradient-to-b from-blue-800 to-purple-900`}
+        className={`${inter.variable} h-dvh w-dvh bg-gradient-to-b from-blue-800 to-purple-900 pb-30`}
       >
         <header className="h-24 top-0 left-0 right-0 z-30 fixed">
           <Navbar />

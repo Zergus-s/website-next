@@ -30,7 +30,7 @@ function Homepage() {
           {loading && <Loading />}
         </div>
         {/* TEXT CONTAINER */}
-        <div className="h-full flex flex-col gap-8 items-center justify-start lg:justify-center lg:h-full lg:w-1/2">
+        <div className="h-full flex flex-col gap-8 items-center justify-start lg:justify-center lg:h-full lg:w-1/2 pb-10">
           {/* TITLE */}
           <h1 className="text-4xl md:text-6xl font-bold text-white/80">
             Crafting Digital Experience, Designing Tomorrow
